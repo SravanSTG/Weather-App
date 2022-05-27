@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+  /* display: flex;
+  justify-content: center; */
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.searchbar {
+  height: 40px;
+  width: 400px;
+  margin: 30px 0;
+  font-size: 1rem;
+  padding: 0 10px;
+  border: 0;
+  opacity: 0.5;
+  border: 1px solid gray;
 }
 
-.App-header {
-  background-color: #282c34;
+.search-btn {
+  height: 40px;
+  width: 50px;
+  border: 0;
+  border: 1px solid gray;
+}
+
+.container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-card {
+  margin: 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.weather-card-main {
+  display: flex;
+  align-items: center;
+}
+
+.weather-card-main > img {
+  width: 100px;
+  height: 100px;
+}
+
+.temp {
+  font-size: 5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.weather-card-main > .temp > i {
+  font-size: 12px;
+  position: relative;
+  bottom: 50px;
+  right: 5px;
+}
+
+.weather-card-main > .temp > span {
+  font-size: 2.5rem;
+  position: relative;
+  bottom: 30px;
+  right: 10px;
+}
+
+.city {
+  margin: 0;
+  margin-left: auto;
+  font-size: 3rem;
+}
+
+.description {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.weather-card-extra-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.weather-card-extra-info > p > i {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.weather-card-extra-info > p {
+  margin: 0 40px;
+}
+
+.weather-card-extra-info > p > span {
+  display: block;
+  margin-top: 5px;
+}
+
+.no-result-found {
+  background-image: url("images/no-results-found.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 800px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 700px) {
+  .container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: unset;
+    min-height: unset;
+    height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .searchbar {
+    width: 200px;
+  }
+
+  .weather-card {
+    margin: 20px 10px;
+  }
+
+  .weather-card-main > img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .temp {
+    font-size: 3rem;
+  }
+
+  .weather-card-main > .temp > i {
+    bottom: 30px;
+  }
+
+  .weather-card-main > .temp > span {
+    font-size: 2rem;
+    bottom: 15px;
+  }
+
+  .city {
+    font-size: 1.8rem;
+    margin-right: 10px;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .weather-card-extra-info {
+    margin-top: 40px;
+  }
+
+  .weather-card-extra-info > p > i {
+    font-size: 1.5rem;
+  }
+
+  .weather-card-extra-info > p {
+    margin: 0 12px;
+    font-size: 1rem;
+  }
+
+  .weather-card-extra-info > p:first-of-type {
+    margin-left: 0;
+  }
+
+  .weather-card-extra-info > p:last-of-type {
+    margin-right: 0;
+  }
+
+  .no-result-found {
+    height: 200px;
+    width: 300px;
   }
 }
